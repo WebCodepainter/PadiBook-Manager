@@ -7,7 +7,7 @@ import { Penalty } from '../models/penalty.model';
   providedIn: 'root'
 })
 export class PenaltyService {
-  private apiUrl = 'https://localhost:8080/api/penalties';
+  private apiUrl = 'http://localhost:8080/api/penalties';
 
   constructor(private http: HttpClient) {}
 

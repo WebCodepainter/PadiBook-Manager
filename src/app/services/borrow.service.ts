@@ -7,7 +7,7 @@ import { Borrow } from '../models/borrow.model';
   providedIn: 'root'
 })
 export class BorrowService {
-  private apiUrl = 'https://localhost:8080/api/borrows';
+  private apiUrl = 'http://localhost:8080/api/borrows';
 
   constructor(private http: HttpClient) {}
 
