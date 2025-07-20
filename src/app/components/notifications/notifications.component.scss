@@ -1,0 +1,18 @@
+.notifications-container {
+  padding: 20px;
+}
+
+h2 {
+  color: var(--primary);
+}
+
+.notification-card {
+  margin-bottom: 20px;
+  background-color: var(--background);
+  border: 1px solid var(--secondary-text);
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}

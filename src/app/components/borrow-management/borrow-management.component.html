@@ -1,0 +1,19 @@
+<div class="borrow-container">
+  <h2>Gestion des emprunts</h2>
+  <mat-card *ngFor="let borrow of borrows">
+    <mat-card-header>
+      <mat-card-title>Emprunt #{{ borrow.id }}</mat-card-title>
+      <mat-card-subtitle>Date: {{ borrow.borrowDate }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Livre ID: {{ borrow.bookId }}</p>
+      <p>Utilisateur ID: {{ borrow.userId }}</p>
+      <p>Date de retour: {{ borrow.dueDate }}</p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="authService.isAdmin()">
+      <button mat-raised-button color="primary" (click)="confirmBorrow(borrow.id)" [disabled]="borrow.returned">
+        <mat-icon>check</mat-icon> Confirmer
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

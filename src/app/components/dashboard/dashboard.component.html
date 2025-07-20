@@ -1,0 +1,16 @@
+<div class="dashboard-container">
+  <h2>Tableau de bord</h2>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Statistiques des emprunts</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <canvas id="borrowChart"></canvas>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="exportReport()">
+        Exporter en PDF
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,33 @@
+<div class="settings-container">
+  <h2>Paramètres</h2>
+  <ng-container *ngIf="user">
+    <form (ngSubmit)="updateProfile()">
+      <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="user!.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="user!.email" name="email" type="email" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Mettre à jour</button>
+    </form>
+  </ng-container>
+  <mat-form-field appearance="outline">
+    <mat-label>Langue</mat-label>
+    <mat-select [(ngModel)]="language" (selectionChange)="setLanguage()">
+      <mat-option value="fr">Français</mat-option>
+      <mat-option value="en">Anglais</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Thème</mat-label>
+    <mat-select [(ngModel)]="theme" (selectionChange)="setTheme()">
+      <mat-option value="light">Clair</mat-option>
+      <mat-option value="dark">Sombre</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="warn" (click)="logout()">
+    <mat-icon>logout</mat-icon> Déconnexion
+  </button>
+</div>

@@ -1,0 +1,14 @@
+.details-container {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+mat-card {
+  background-color: var(--background);
+  border: 1px solid var(--secondary-text);
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 10px;
+}

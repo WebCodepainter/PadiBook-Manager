@@ -1,0 +1,18 @@
+<div class="penalty-container">
+  <h2>Gestion des pénalités</h2>
+  <mat-card *ngFor="let penalty of penalties">
+    <mat-card-header>
+      <mat-card-title>Pénalité #{{ penalty.id }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Emprunt ID: {{ penalty.borrowId }}</p>
+      <p>Montant: {{ penalty.amount }}</p>
+      <p>Payée: {{ penalty.paid ? 'Oui' : 'Non' }}</p>
+    </mat-card-content>
+    <mat-card-actions *ngIf="authService.isAdmin()">
+      <button mat-raised-button color="primary" (click)="markPaid(penalty.id)" [disabled]="penalty.paid">
+        <mat-icon>check</mat-icon> Marquer comme payée
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

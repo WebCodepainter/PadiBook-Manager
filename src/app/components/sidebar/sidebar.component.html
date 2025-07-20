@@ -1,0 +1,61 @@
+<mat-nav-list class="sidebar">
+  <div class="sidebar-header">
+    <h1>PadiBook-Manager</h1>
+    <p *ngIf="authService.currentUser">{{ authService.currentUser.name }}</p>
+  </div>
+  <mat-list-item *ngIf="authService.isAuthenticated()">
+    <a mat-list-item routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+      <mat-icon>dashboard</mat-icon> Tableau de bord
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated()">
+    <a mat-list-item routerLink="/catalog" routerLinkActive="active">
+      <mat-icon>book</mat-icon> Catalogue
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated() && authService.isAdmin()">
+    <a mat-list-item routerLink="/book-management" routerLinkActive="active">
+      <mat-icon>library_books</mat-icon> Gestion des livres
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated()">
+    <a mat-list-item routerLink="/borrow-management" routerLinkActive="active">
+      <mat-icon>borrow</mat-icon> Emprunts
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated()">
+    <a mat-list-item routerLink="/reservation-management" routerLinkActive="active">
+      <mat-icon>event</mat-icon> Réservations
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated() && authService.isAdmin()">
+    <a mat-list-item routerLink="/user-management" routerLinkActive="active">
+      <mat-icon>people</mat-icon> Utilisateurs
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated()">
+    <a mat-list-item routerLink="/penalty-management" routerLinkActive="active">
+      <mat-icon>warning</mat-icon> Pénalités
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated()">
+    <a mat-list-item routerLink="/notifications" routerLinkActive="active">
+      <mat-icon>notifications</mat-icon> Notifications
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated()">
+    <a mat-list-item routerLink="/settings" routerLinkActive="active">
+      <mat-icon>settings</mat-icon> Paramètres
+    </a>
+  </mat-list-item>
+  <mat-list-item>
+    <a mat-list-item routerLink="/public-catalog" routerLinkActive="active">
+      <mat-icon>book</mat-icon> Catalogue public
+    </a>
+  </mat-list-item>
+  <mat-list-item *ngIf="authService.isAuthenticated()" (click)="logout()">
+    <a mat-list-item>
+      <mat-icon>logout</mat-icon> Déconnexion
+    </a>
+  </mat-list-item>
+</mat-nav-list>
